@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <iostream>
+#include<time.h>                  //time
+#include<stdlib.h>                //rand()
+
+using namespace std;
+int main()
+{
+    srand(time(NULL));                       //generator bilangan acak
+   int array[100000], n, c, d, posisi, swap;
+
+   printf("Pengurutan Ascending Bilangan Acak - Selection Sort\n");
+   printf("Masukan jumlah elemen (n)\n");
+   scanf("%d", &n);
+
+   printf("Memasukan %d bilangan acak\n", n);
+
+   printf("\n");
+
+   printf("Data yang belum diurut\n");
+
+   for ( c = 0 ; c < n ; c++ )
+      array[c]=rand()%100;
+    for ( c = 0 ; c < n ; c++ )
+       printf("%d ", array[c]);
+
+   for ( c = 0 ; c < ( n - 1 ) ; c++ )
+   {
+      posisi = c;
+
+      for ( d = c + 1 ; d < n ; d++ )
+      {
+         if ( array[posisi] > array[d] )
+            posisi = d;
+      }
+      if ( posisi != c )
+      {
+         swap = array[c];
+         array[c] = array[posisi];
+         array[posisi] = swap;
+      }
+   }
+    printf("\n");
+    printf("\n");
+   printf("Data yang sudah diurut:\n");
+
+   for ( c = 0 ; c < n ; c++ ){
+      printf("%d ", array[c]);
+   }
+   printf("\n");
+   return 0;
+}
+//Fiyona Anmila Syamsir IF-43-10 1301194201
+//referensi https://stackoverflow.com/questions/29138974/selection-sort-code-with-srand-input
