@@ -621,3 +621,4 @@ if __name__ == "__main__":
     sys.exit(app.exec_())
 
     #referensi https://github.com/almazarrafael/Sorting-Algorithm-Visualizer/blob/master/README.md
+    #Fiyona Anmila Syamsir IF-43-10 1301194201
